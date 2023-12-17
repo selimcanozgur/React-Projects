@@ -3,11 +3,17 @@ import Item from "./Item";
 function ItemList({ item }) {
   return (
     <div>
-      <ul>
+      <table>
+        <thead>
+          <tr>
+            <th>Öncelik</th>
+            <th>Görev</th>
+          </tr>
+        </thead>
         {item.map((product) => (
-          <Item key={product} product={product} />
+          <Item key={product._id} product={product} />
         ))}
-      </ul>
+      </table>
     </div>
   );
 }

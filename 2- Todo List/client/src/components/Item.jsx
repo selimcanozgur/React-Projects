@@ -1,10 +1,12 @@
 function Item({ product }) {
   const { text, count } = product;
   return (
-    <li className="text-slate-200 flex">
-      <label>{count}</label>
-      <p>{text}</p>
-    </li>
+    <tbody className="text-slate-200 flex">
+      <tr>
+        <td>{count}</td>
+        <td>{text}</td>
+      </tr>
+    </tbody>
   );
 }
 
