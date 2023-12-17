@@ -6,7 +6,7 @@ function Form({ datas }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!text) return;
+    if (!text) return alert("Text field cannot be left empty");
     const newItem = { text, count };
     datas(newItem);
     setText("");
@@ -24,7 +24,7 @@ function Form({ datas }) {
         ))}
       </select>
       <input
-        className="rounded-full"
+        className="rounded-full px-4 py-2 outline-none"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
