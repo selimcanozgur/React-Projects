@@ -16,7 +16,7 @@ function Form() {
   return (
     <form className="flex justify-center gap-2 mt-8" onSubmit={handleSubmit}>
       <select
-        className="rounded-full px-3 w-16 focus:w-28 duration-500 text-slate-600 font-semibold focus:ring focus:ring-green-400 text-xl"
+        className="rounded-full px-3 w-16 focus:w-28 duration-300 text-slate-600 font-semibold focus:ring focus:ring-green-400 text-xl"
         value={count}
         onChange={(e) => setCount(Number(e.target.value))}
       >
@@ -27,10 +27,11 @@ function Form() {
         ))}
       </select>
       <input
-        className="rounded-full px-4 py-2 outline-none w-60 focus:w-72 duration-500 focus:ring focus:ring-green-400"
+        className="rounded-full px-4 py-2 outline-none w-60 focus:w-72 duration-300 focus:ring focus:ring-green-400"
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
+        required
       />
       <button className="bg-slate-200 text-slate-700 px-3 py-2 rounded-full uppercase font-semibold ">
         Add Task

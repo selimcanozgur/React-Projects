@@ -27,3 +27,18 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #414141;
 }
+
+.itemName {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.itemDescription {
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0.6px;
+}
+
+.price {
+  font-family: "Lato", sans-serif;
+}

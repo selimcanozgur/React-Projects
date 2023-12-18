@@ -6,7 +6,7 @@ function Footer() {
   return (
     <>
       <hr />
-      <footer className="text-slate-300 text-center my-6">
+      <footer className="text-slate-300 text-center my-6 font-semibold itemDescription mb-12">
         {time >= open && time <= close
           ? "We're open from 12:00 to 22:00 🟢"
           : "It is closed now 🔴"}
