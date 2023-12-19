@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+package-lock.json
+package.json
+postcss.config.json
+tailwind.config.js
+vite.config.js
