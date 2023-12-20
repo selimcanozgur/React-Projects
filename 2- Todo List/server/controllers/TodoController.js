@@ -8,7 +8,10 @@ export async function GetAllItem(req, res) {
       data: items,
     });
   } catch (err) {
-    console.log(err);
+    res.status(500).json({
+      status: "fail",
+      message: err.message,
+    });
   }
 }
 
@@ -22,4 +25,14 @@ export async function CreateItem(req, res) {
   } catch (error) {
     console.log(error);
   }
+}
+
+export async function DeleteItem(req, res) {
+  try {
+    const { id } = req.params;
+    await Item.findByIdAndDelete(id);
+    res.status(200).json({
+      message: "Item deleted",
+    });
+  } catch (error) {}
 }

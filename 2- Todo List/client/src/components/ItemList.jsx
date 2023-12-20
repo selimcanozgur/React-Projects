@@ -17,6 +17,7 @@ function ItemList({ item }) {
               <td className="border-separate border border-slate-500 rounded-lg">
                 {item.text}
               </td>
+              <button>X</button>
             </tr>
           ))}
         </tbody>
