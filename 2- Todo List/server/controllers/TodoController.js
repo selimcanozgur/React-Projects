@@ -5,6 +5,7 @@ export async function GetAllItem(req, res) {
     const items = await Item.find();
     res.status(200).json({
       status: "success",
+      size: items.length,
       data: items,
     });
   } catch (err) {

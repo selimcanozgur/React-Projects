@@ -7,9 +7,7 @@ function App() {
     <div>
       <Header />
       <Form />
-      <ItemList item={item} />
-
-      <p className="text-slate-200"></p>
+      <ItemList />
     </div>
   );
 }
