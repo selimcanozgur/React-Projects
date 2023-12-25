@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Form() {
+function Form({ createItem }) {
   const [text, setText] = useState("");
   const [piece, setPiece] = useState(1);
 
@@ -8,7 +8,7 @@ function Form() {
     e.preventDefault();
     if (!text) return;
     const newItem = { text, piece, check: false, id: Date.now() };
-    console.log(newItem);
+    createItem(newItem);
     setText("");
     setPiece(1);
   }
