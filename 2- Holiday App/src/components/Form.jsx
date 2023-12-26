@@ -14,9 +14,9 @@ function Form({ createItem }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="flex justify-center my-6 gap-4" onSubmit={handleSubmit}>
       <select
-        className="border rounded-full focus:outline-none"
+        className="border rounded-full py-3 px-4 focus:outline-none"
         value={piece}
         onChange={(e) => Number(setPiece(e.target.value))}
       >
@@ -27,10 +27,15 @@ function Form({ createItem }) {
       <input
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="border py-3 px-4 focus:outline-none border-orange-400 rounded-full"
+        /*
+         className="w-44 border border-red-500 rounded-full transition-all duration-500 focus:w-72"
+        */
+        className="w-52 transition-all  duration-500 border py-3 px-4 focus:outline-none border-orange-400 rounded-full focus:w-72"
         type="text"
       />
-      <button>Add</button>
+      <button className="bg-green-400 font-semibold w-24 uppercase text-slate-50 rounded-full">
+        Add
+      </button>
     </form>
   );
 }

@@ -2,15 +2,18 @@ function ItemList({ item, deleteItem }) {
   const { text, piece, check, id } = item;
 
   return (
-    <li className="flex gap-2">
-      <input type="checkBox" />
-      <div className={check ? "line-through" : ""}>
-        <p>
-          {piece}
-          {text}
-        </p>
+    <li>
+      <div className="flex">
+        <input type="checkBox" />
+        <div className={check ? "line-through" : ""}>
+          <p className="font-semibold px-2">
+            {piece} {text}
+          </p>
+        </div>
+        <button className="mr-10" onClick={() => deleteItem(id)}>
+          ❌
+        </button>
       </div>
-      <button onClick={() => deleteItem(id)}>❌</button>
     </li>
   );
 }
