@@ -7,7 +7,7 @@ function Form({ createItem }) {
   function handleSubmit(e) {
     e.preventDefault();
     if (!text) return;
-    const newItem = { text, piece, check: false, id: Date.now() };
+    const newItem = { text, piece, packed: false, id: Date.now() };
     createItem(newItem);
     setText("");
     setPiece(1);
@@ -27,11 +27,9 @@ function Form({ createItem }) {
       <input
         value={text}
         onChange={(e) => setText(e.target.value)}
-        /*
-         className="w-44 border border-red-500 rounded-full transition-all duration-500 focus:w-72"
-        */
         className="w-52 transition-all  duration-500 border py-3 px-4 focus:outline-none border-orange-400 rounded-full focus:w-72"
         type="text"
+        required
       />
       <button className="bg-green-400 font-semibold w-24 uppercase text-slate-50 rounded-full">
         Add

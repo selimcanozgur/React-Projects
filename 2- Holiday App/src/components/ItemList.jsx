@@ -1,11 +1,11 @@
-function ItemList({ item, deleteItem }) {
-  const { text, piece, check, id } = item;
+function ItemList({ item, deleteItem, handleToggleItem }) {
+  const { text, piece, packed, id } = item;
 
   return (
     <li>
       <div className="flex">
-        <input type="checkBox" />
-        <div className={check ? "line-through" : ""}>
+        <input type="checkBox" onChange={() => handleToggleItem(id)} />
+        <div className={packed ? "line-through" : ""}>
           <p className="font-semibold px-2">
             {piece} {text}
           </p>
