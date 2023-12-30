@@ -4,14 +4,14 @@ function Footer({ bagSize, items }) {
   let bagFull = Math.round((packedCount / bagSize) * 100);
 
   return (
-    <div className="flex justify-center bg-slate-300">
-      <p className="text-2xl uppercase font-semibold">
+    <footer className="flex justify-center footerStyle my-8">
+      <p className="text-xl uppercase font-semibold  py-6">
         {bagFull === 100
           ? `The bag is all packed, have a nice trip. ✈`
           : `Bag %${bagFull} packed
 `}
       </p>
-    </div>
+    </footer>
   );
 }
 

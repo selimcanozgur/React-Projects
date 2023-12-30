@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*
+Colors: 
+#031a3d
+#a4826d
+#f7e6da
+*/
+
+body {
+  background-color: #031a3d;
+}
+
+.items {
+  background-color: #f7e6da;
+}
+
+.headerStyle {
+  border: 3px solid #f7e6da;
+}
+
+.holidayText {
+  color: #f7e6da;
+}
+
+.footerStyle {
+  background: #f7e6da;
+}
