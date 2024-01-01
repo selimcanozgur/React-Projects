@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Buttons from "./components/Buttons";
 
-const users = [
+const initialFriends = [
   {
     id: 262626,
     name: "Selimcan",
@@ -23,26 +23,92 @@ const users = [
 ];
 
 function App() {
-  const [datas, setData] = useState(users);
+  const [friends, setFriends] = useState(initialFriends);
+  const [addFriend, setAddFriend] = useState(false);
+
+  function newFriendsFunct(newFriends) {
+    setFriends((friends) => [...friends, newFriends]);
+  }
+
+  function handleFriend() {
+    setAddFriend(() => !addFriend);
+  }
+  return (
+    <div>
+      <FriendsList friends={friends} />
+      <NewFriend />
+      <Buttons>Add Friend</Buttons>
+    </div>
+  );
+}
+
+function FriendsList({ friends }) {
   return (
     <div>
       <ul>
-        {datas.map((data) => (
-          <li className="listStyle">
-            <img className="imgStyle" src={data.image} />
-            <div className="userInfo">
-              <p className="nameStyle">{data.name}</p>
-              <p>
-                {data.balance < 0
-                  ? `${data.name}'a ${data.balance} borcun var`
-                  : `${data.name}'in sana ${data.balance} borcu var.`}
-                {data.balance === 0 && "Kimsenin borcu yok"}
-              </p>
-            </div>
-          </li>
+        {friends.map((item) => (
+          <Friend key={item.id} item={item} />
         ))}
       </ul>
     </div>
+  );
+}
+
+function Friend({ item }) {
+  const { name, image, balance } = item;
+  return (
+    <li className="flex gap-4">
+      <img src={image} alt={name} />
+      <div className="friendInfo">
+        <p>{name}</p>
+        {balance < 0 && (
+          <p className="text-red-500">
+            You owe {name} {Math.abs(balance)}€
+          </p>
+        )}
+
+        {balance > 0 && (
+          <p className="text-green-500">
+            {name} owes you {balance}€
+          </p>
+        )}
+
+        {balance === 0 && (
+          <p className="text-slate-800">You and {name} are even</p>
+        )}
+      </div>
+      <Buttons>Select</Buttons>
+    </li>
+  );
+}
+
+function NewFriend({ newFriendsFunct, setAddFriend }) {
+  const [name, setName] = useState("");
+  const [image, setImage] = useState("https://i.pravatar.cc/48");
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    const newFriends = { name, image, balance: 0 };
+    newFriendsFunct(newFriends);
+    setAddFriend(false);
+  }
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label> Friend Name </label>
+      <input
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        type="text"
+      />
+      <label>Image URL</label>
+      <input
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
+        type="text"
+      />
+      <Buttons>Add</Buttons>
+    </form>
   );
 }
 
