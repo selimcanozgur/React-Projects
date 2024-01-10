@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+button {
+  background: rgb(65, 65, 65);
+}
+
+progress {
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+}
+progress::-webkit-progress-bar {
+  border: 0;
+  height: 20px;
+  border-radius: 20px;
+}
+progress::-webkit-progress-value {
+  border: 0;
+  height: 20px;
+  border-radius: 20px;
+  background: rgb(76, 135, 244);
+}
+progress::-moz-progress-bar {
+  border: 0;
+  height: 20px;
+  border-radius: 20px;
+}
