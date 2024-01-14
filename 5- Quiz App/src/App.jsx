@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import Header from "./components/Header";
