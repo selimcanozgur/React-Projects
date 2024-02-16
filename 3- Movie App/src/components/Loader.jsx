@@ -1,7 +1,7 @@
 import { TbLoader3 } from "react-icons/tb";
 
 function Loader() {
-  return <TbLoader3 className="w-12 h-12 animate-spin text-blue-500" />;
+  return <TbLoader3 className="w-20 h-20 animate-spin text-zinc-500" />;
 }
 
 export default Loader;
